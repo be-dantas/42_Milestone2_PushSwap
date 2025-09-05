@@ -1,0 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/02 13:13:16 by bedantas          #+#    #+#             */
+/*   Updated: 2025/09/05 18:26:50 by bedantas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <limits.h> // valot int MAX int MIN
+# include "./LIBFT/libft.h"
+
+// Guarda valores e informações úteis para manipulação da pilha.
+typedef struct s_stack_node
+{
+	int					value;
+	struct s_stack_node	*next;
+}				t_stack_node;
+
+// crian_pilha_a.c
+t_stack_node	*criar_elemento_pilha(int argv_atoi);
+t_stack_node	*elemento_anterior(t_stack_node *a);
+void			adicionar_int_pilha(t_stack_node *a, int argv_atoi);
+
+// free_error.c
+void			free_split(char **argv_split);
+void			free_all(char **argv_split, t_stack_node *a);
+void			free_stack(t_stack_node *a);
+void			check_error(void);
+
+// preparando_input.c
+char			*argv_maior_2(char **argv);
+int				int_repetidos(t_stack_node *a, int argv_atoi);
+int				input_valido(char *argv_ok);
+char			**tratar_input(int argc, char **argv);
+t_stack_node	*criar_pilha_a(t_stack_node *a, int argc, char **argv);
+
+#endif

@@ -6,38 +6,38 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 13:16:59 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/05 18:17:33 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/08 17:48:34 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-// se o input vier separado: ./a.out "1" "2" "3"
+// seria mehor chechar se o dup na argv_ok funcionou, massssss...
 char	*argv_maior_2(char **argv)
 {
 	int		i;
 	char	*argv_ok;
 	char	*temp;
+	char	*joined;
 
 	i = 1;
 	argv_ok = ft_strdup("");
-	temp = ft_strdup("");
-	if (!temp || !argv_ok)
-		return (NULL);
 	while (argv[i])
 	{
 		temp = ft_strjoin(argv[i], " ");
-		argv_ok = ft_strjoin(argv_ok, temp);
-		if (!temp || !argv_ok)
+		if (!temp)
 		{
-			free (temp);
 			free (argv_ok);
 			return (NULL);
 		}
+		joined = ft_strjoin(argv_ok, temp);
+		free(argv_ok);
+		free(temp);
+		if (!joined)
+			return (NULL);
+		argv_ok = joined;
 		i++;
 	}
-	free (temp);
 	return (argv_ok);
 }
 

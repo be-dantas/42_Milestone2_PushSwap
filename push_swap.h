@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:13:16 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/05 18:26:50 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/08 14:59:10 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack_node
 {
 	int					value;
+	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }				t_stack_node;
 
@@ -40,5 +41,16 @@ int				int_repetidos(t_stack_node *a, int argv_atoi);
 int				input_valido(char *argv_ok);
 char			**tratar_input(int argc, char **argv);
 t_stack_node	*criar_pilha_a(t_stack_node *a, int argc, char **argv);
+
+// comandos_push.c
+void			push(t_stack_node **dest, t_stack_node **pilha);
+void			pa(t_stack_node **a, t_stack_node **b);
+void			pb(t_stack_node **b, t_stack_node **a);
+
+// comandos_swap.c
+void			swap(t_stack_node **pilha);
+void			sa(t_stack_node **a);
+void			sb(t_stack_node **b);
+void			ss(t_stack_node **a, t_stack_node **b);
 
 #endif

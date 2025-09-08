@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:13:16 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/08 14:59:10 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/08 18:50:35 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_stack_node
 
 // crian_pilha_a.c
 t_stack_node	*criar_elemento_pilha(int argv_atoi);
-t_stack_node	*elemento_anterior(t_stack_node *a);
+t_stack_node	*ultimo_elemento(t_stack_node *a);
 void			adicionar_int_pilha(t_stack_node *a, int argv_atoi);
 
 // free_error.c
@@ -52,5 +52,11 @@ void			swap(t_stack_node **pilha);
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
 void			ss(t_stack_node **a, t_stack_node **b);
+
+// comandos_rotate_baixo.c
+void			rotate_baixo(t_stack_node **pilha);
+void			rra(t_stack_node **a);
+void			rrb(t_stack_node **b);
+void			rrr(t_stack_node **a, t_stack_node **b);
 
 #endif

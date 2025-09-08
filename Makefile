@@ -6,7 +6,7 @@
 #    By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/17 09:30:58 by bedantas          #+#    #+#              #
-#    Updated: 2025/09/08 14:58:11 by bedantas         ###   ########.fr        #
+#    Updated: 2025/09/08 18:51:51 by bedantas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS =	push_swap.c			\
-		criando_pilha_a.c	\
-		free_error.c		\
-		preparar_input.c	\
-		comandos_push.c		\
-		comandos_swap.c
+SRCS =	push_swap.c				\
+		criando_pilha_a.c		\
+		free_error.c			\
+		preparar_input.c		\
+		comandos_push.c			\
+		comandos_swap.c			\
+		comandos_rotate_baixo.c
 
 OBJS = $(SRCS:.c=.o)
 

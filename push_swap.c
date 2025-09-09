@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:11:02 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/08 18:48:05 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/09 14:41:39 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,11 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	
 	if (argc == 2 && !argv[1][0])
 		ft_putstr_fd("Error\n", 2);
 	if (argc >= 2)
 	{
 		a = criar_pilha_a(a, argc, argv);
-
-		printf("pilha A antes:\n");
-		t_stack_node *head = a;
-		while (head != NULL)
-		{
-			printf ("%d\n", head->value);
-			head = head->next;
-		}
-
-		rra(&a);
-		printf("pilha A depois:\n");
-		t_stack_node *head_1 = a;
-		while (head_1 != NULL)
-		{
-			printf ("%d\n", head_1->value);
-			head_1 = head_1->next;
-		}
-		
 	}
 	free_stack(a);
 	free_stack(b);
@@ -62,7 +43,6 @@ int	main(int argc, char **argv)
 // 	printf ("%d\n", head->value);
 // 	head = head->next;
 // }
-
 
 
 
@@ -128,4 +108,103 @@ int	main(int argc, char **argv)
 // 	else
 // 		printf("valor: %d | prev: (NULL)\n", head_1->value);
 // 	head_1 = head_1->next;
+// }
+
+
+
+
+// ---- rotacionar pilha A
+// printf("pilha A antes:\n");
+// t_stack_node *head = a;
+// while (head != NULL)
+// {
+// 	printf ("%d\n", head->value);
+// 	head = head->next;
+// }
+
+// rra(&a);
+// printf("pilha A depois:\n");
+// t_stack_node *head_1 = a;
+// while (head_1 != NULL)
+// {
+// 	printf ("%d\n", head_1->value);
+// 	head_1 = head_1->next;
+// }
+
+
+
+
+// ---- rotacionar pilha A e B para cima
+// pb(&b, &a);
+// pb(&b, &a);
+// pb(&b, &a);
+
+// printf("pilha A com 3 pushs:\n");
+// t_stack_node *head_a = a;
+// while (head_a != NULL)
+// {
+// 	printf ("%d\n", head_a->value);
+// 	head_a = head_a->next;
+// }
+
+// printf("pilha B com 3 pushs:\n");
+// t_stack_node *head_b = b;
+// while (head_b != NULL)
+// {
+// 	printf ("%d\n", head_b->value);
+// 	head_b = head_b->next;
+// }
+
+// rr(&a, &b);
+// printf("pilha A depois rotate rr:\n");
+// t_stack_node *head_a_1 = a;
+// while (head_a_1 != NULL)
+// {
+// 	printf ("%d\n", head_a_1->value);
+// 	head_a_1 = head_a_1->next;
+// }
+
+// printf("pilha B depois rotate rr:\n");
+// t_stack_node *head_b_1 = b;
+// while (head_b_1 != NULL)
+// {
+// 	printf ("%d\n", head_b_1->value);
+// 	head_b_1 = head_b_1->next;
+// }
+
+
+
+
+// ---- rotacionar pilha A e B para baixo
+// printf("pilha A com 3 pushs:\n");
+// t_stack_node *head_a = a;
+// while (head_a != NULL)
+// {
+// 	printf ("%d\n", head_a->value);
+// 	head_a = head_a->next;
+// }
+
+// printf("pilha B com 3 pushs:\n");
+// t_stack_node *head_b = b;
+// while (head_b != NULL)
+// {
+// 	printf ("%d\n", head_b->value);
+// 	head_b = head_b->next;
+// }
+
+// rrr(&a, &b);
+// printf("pilha A depois rotate rr:\n");
+// t_stack_node *head_a_1 = a;
+// while (head_a_1 != NULL)
+// {
+// 	printf ("%d\n", head_a_1->value);
+// 	head_a_1 = head_a_1->next;
+// }
+
+// printf("pilha B depois rotate rr:\n");
+// t_stack_node *head_b_1 = b;
+// while (head_b_1 != NULL)
+// {
+// 	printf ("%d\n", head_b_1->value);
+// 	head_b_1 = head_b_1->next;
 // }

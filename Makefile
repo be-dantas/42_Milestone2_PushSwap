@@ -6,7 +6,7 @@
 #    By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/17 09:30:58 by bedantas          #+#    #+#              #
-#    Updated: 2025/09/08 18:51:51 by bedantas         ###   ########.fr        #
+#    Updated: 2025/09/09 11:30:05 by bedantas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCS =	push_swap.c				\
 		preparar_input.c		\
 		comandos_push.c			\
 		comandos_swap.c			\
-		comandos_rotate_baixo.c
+		comandos_rotate_baixo.c	\
+		comandos_rotate_cima.c
 
 OBJS = $(SRCS:.c=.o)
 

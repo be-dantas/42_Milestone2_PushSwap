@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:13:16 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/08 18:50:35 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/09 11:29:22 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,11 @@ void			rotate_baixo(t_stack_node **pilha);
 void			rra(t_stack_node **a);
 void			rrb(t_stack_node **b);
 void			rrr(t_stack_node **a, t_stack_node **b);
+
+// comandos_rotate_cima.c
+void			rotate_cima(t_stack_node **pilha);
+void			ra(t_stack_node **a);
+void			rb(t_stack_node **b);
+void			rr(t_stack_node **a, t_stack_node **b);
 
 #endif

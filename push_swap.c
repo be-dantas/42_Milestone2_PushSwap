@@ -12,8 +12,6 @@
 
 #include "push_swap.h"
 
-#include <stdio.h>
-
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
@@ -21,11 +19,21 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc == 2 && !argv[1][0])
+	if ((argc == 2 && !argv[1][0]) || (argc < 2))
 		ft_putstr_fd("Error\n", 2);
 	if (argc >= 2)
 	{
 		a = criar_pilha_a(a, argc, argv);
+
+		index_elemento(&a);
+
+		t_stack_node *head = a;
+		while (head != NULL)
+		{
+			printf ("Value: %d  Index: %d\n", head->value, head->index);
+			head = head->next;
+		}
+
 	}
 	free_stack(a);
 	free_stack(b);

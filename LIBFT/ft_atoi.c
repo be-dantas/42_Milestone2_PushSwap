@@ -6,17 +6,17 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:54:03 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/04 15:32:40 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/09 18:32:59 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int		i;
-	int		signal;
-	long	result;
+	int			i;
+	int			signal;
+	long int	result;
 
 	i = 0;
 	signal = 1;

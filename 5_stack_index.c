@@ -12,50 +12,29 @@
 
 #include "push_swap.h"
 
-void	free_split(char **argv_split)
+void	index_elemento(t_stack_node **a)
 {
-	int	i;
+	int				i;
+	t_stack_node	*temp_pilha;
+	t_stack_node	*percorrer;
+	t_stack_node	*inicial_temp;
 
-	if (!argv_split)
-		return ;
 	i = 0;
-	while (argv_split[i])
+	temp_pilha = *a;
+	percorrer = *a;
+	inicial_temp = temp_pilha;
+	while (temp_pilha != NULL)
 	{
-		free(argv_split[i]);
-		i++;
+		while (percorrer != NULL)
+		{
+			if (temp_pilha->value > percorrer->value)
+				i++;
+			percorrer = percorrer->next;
+		}
+		temp_pilha->index = i;
+		i = 0;
+		temp_pilha = temp_pilha->next;
+		percorrer = *a;
 	}
-	free(argv_split);
-}
-
-void	free_all(char **argv_split, t_stack_node *a)
-{
-	t_stack_node	*tmp;
-
-	while (a)
-	{
-		tmp = a->next;
-		free(a);
-		a = tmp;
-	}
-	free_split(argv_split);
-	ft_putstr_fd("Error\n", 2);
-	exit (EXIT_FAILURE);
-}
-
-void	free_stack(t_stack_node *a)
-{
-	t_stack_node	*tmp;
-
-	while (a)
-	{
-		tmp = a->next;
-		free(a);
-		a = tmp;
-	}
-}
-
-void	check_error(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit (EXIT_FAILURE);
+	*a = inicial_temp;
 }

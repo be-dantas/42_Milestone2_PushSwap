@@ -13,7 +13,7 @@
 #include "push_swap.h"
 
 // checa cada string do array para ver 'e numero ou se tem ++ -- seguidos
-int	input_valido(char *argv_ok)
+int	valid_input(char *argv_ok)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	input_valido(char *argv_ok)
 	return (1);
 }
 
-char	*fazer_join(char **argv, char *argv_join)
+char	*make_join(char **argv, char *argv_join)
 {
 	int		i;
 	char	*temp;
@@ -67,7 +67,7 @@ char	*fazer_join(char **argv, char *argv_join)
 	return (argv_join);
 }
 
-char	*argv_maior_2(char **argv)
+char	*argv_up_2(char **argv)
 {
 	int		i;
 	char	*argv_ok;
@@ -86,11 +86,11 @@ char	*argv_maior_2(char **argv)
 		}
 		i++;
 	}
-	argv_join = fazer_join(argv, argv_ok);
+	argv_join = make_join(argv, argv_ok);
 	return (argv_join);
 }
 
-char	**tratar_input(int argc, char **argv)
+char	**treat_input(int argc, char **argv)
 {
 	char	*argv_ok;
 	char	**argv_split;
@@ -98,12 +98,12 @@ char	**tratar_input(int argc, char **argv)
 	argv_ok = NULL;
 	argv_split = NULL;
 	if (argc > 2)
-		argv_ok = argv_maior_2(argv);
+		argv_ok = argv_up_2(argv);
 	else if (argc == 2)
 		argv_ok = ft_strdup(argv[1]);
 	if (!argv_ok)
 		return (NULL);
-	if (!input_valido(argv_ok))
+	if (!valid_input(argv_ok))
 	{
 		free (argv_ok);
 		return (NULL);

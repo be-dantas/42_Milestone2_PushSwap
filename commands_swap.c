@@ -12,22 +12,22 @@
 
 #include "push_swap.h"
 
-void	swap(t_stack_node **pilha)
+void	swap(t_stack_node **stack)
 {
 	t_stack_node	*item_1;
 	t_stack_node	*item_2;
 
-	if (*pilha == NULL || (*pilha)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	item_1 = *pilha;
-	item_2 = (*pilha)->next;
+	item_1 = *stack;
+	item_2 = (*stack)->next;
 	item_1->prev = item_2;
 	item_1->next = item_2->next;
 	if (item_2->next)
 		item_2->next->prev = item_1;
 	item_2->prev = NULL;
 	item_2->next = item_1;
-	*pilha = item_2;
+	*stack = item_2;
 }
 
 void	sa(t_stack_node **a)

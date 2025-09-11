@@ -13,35 +13,35 @@
 #include "push_swap.h"
 
 // o final vira o comeco, e o final vira o penultimo
-void	rotate_baixo(t_stack_node **pilha)
+void	rotate_down(t_stack_node **stack)
 {
-	t_stack_node	*final;
+	t_stack_node	*end;
 
-	if (!*pilha || !(*pilha)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
-	final = ultimo_elemento(*pilha);
-	final->prev->next = NULL;
-	final->prev = NULL;
-	final->next = *pilha;
-	(*pilha)->prev = final;
-	*pilha = final;
+	end = last_element(*stack);
+	end->prev->next = NULL;
+	end->prev = NULL;
+	end->next = *stack;
+	(*stack)->prev = end;
+	*stack = end;
 }
 
 void	rra(t_stack_node **a)
 {
-	rotate_baixo(a);
+	rotate_down(a);
 	write (1, "rra\n", 4);
 }
 
 void	rrb(t_stack_node **b)
 {
-	rotate_baixo(b);
+	rotate_down(b);
 	write (1, "rrb\n", 4);
 }
 
 void	rrr(t_stack_node **a, t_stack_node **b)
 {
-	rotate_baixo(a);
-	rotate_baixo(b);
+	rotate_down(a);
+	rotate_down(b);
 	write (1, "rrr\n", 4);
 }

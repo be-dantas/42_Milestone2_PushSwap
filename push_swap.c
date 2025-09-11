@@ -23,9 +23,9 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("Error\n", 2);
 	if (argc >= 2)
 	{
-		a = criar_pilha_a(a, argc, argv);
+		a = create_stack_a(a, argc, argv);
 
-		pilha_b(&a, &b);
+		stack_b(&a, &b);
 
 		printf("Lista A:\n");
 		t_stack_node *head = a;

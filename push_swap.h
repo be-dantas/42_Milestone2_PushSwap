@@ -26,26 +26,26 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 }				t_stack_node;
 
-// 1_criar_pilha.c
-void			index_elemento(t_stack_node **a);
-int				int_repetidos(t_stack_node *a, int argv_atoi);
-t_stack_node	*criar_pilha_a(t_stack_node *a, int argc, char **argv);
+// 1_create_stack_a.c
+void			index_element(t_stack_node **a);
+int				int_repeated(t_stack_node *a, int argv_atoi);
+t_stack_node	*create_stack_a(t_stack_node *a, int argc, char **argv);
 
-// 2_preparar_input.c
-int				input_valido(char *argv_ok);
-char			*fazer_join(char **argv, char *argv_ok);
-char			*argv_maior_2(char **argv);
-char			**tratar_input(int argc, char **argv);
+// 2_prepare_input.c
+int				valid_input(char *argv_ok);
+char			*make_join(char **argv, char *argv_ok);
+char			*argv_up_2(char **argv);
+char			**treat_input(int argc, char **argv);
 
-// 3_ajeitar_pilhas.c
-void			pilha_até_3(t_stack_node **a);
-void			pilha_b(t_stack_node **a, t_stack_node **b);
+// 3_prepare_stacks.c
+void			stack_up_3(t_stack_node **a);
+void			stack_b(t_stack_node **a, t_stack_node **b);
 
-// elementos_pilha.c
-t_stack_node	*criar_elemento_pilha(int argv_atoi);
-t_stack_node	*ultimo_elemento(t_stack_node *a);
-int				tamanho_pilha(t_stack_node *pilha);
-void			adicionar_int_pilha(t_stack_node *a, int argv_atoi);
+// elements_stack.c
+t_stack_node	*create_element_stack(int argv_atoi);
+t_stack_node	*last_element(t_stack_node *stack);
+int				stack_size(t_stack_node *stack);
+void			add_int_stack(t_stack_node *a, int argv_atoi);
 
 // free_error.c
 void			free_split(char **argv_split);
@@ -53,25 +53,25 @@ void			free_all(char **argv_split, t_stack_node *a);
 void			free_stack(t_stack_node *a);
 void			check_error(void);
 
-// comandos_push.c
-void			push(t_stack_node **dest, t_stack_node **pilha);
+// commands_push.c
+void			push(t_stack_node **dest, t_stack_node **stack);
 void			pa(t_stack_node **a, t_stack_node **b);
 void			pb(t_stack_node **b, t_stack_node **a);
 
-// comandos_rotate_baixo.c
-void			rotate_baixo(t_stack_node **pilha);
+// commands_rotate_baixo.c
+void			rotate_down(t_stack_node **stack);
 void			rra(t_stack_node **a);
 void			rrb(t_stack_node **b);
 void			rrr(t_stack_node **a, t_stack_node **b);
 
-// comandos_rotate_cima.c
-void			rotate_cima(t_stack_node **pilha);
+// commands_rotate_cima.c
+void			rotate_up(t_stack_node **stack);
 void			ra(t_stack_node **a);
 void			rb(t_stack_node **b);
 void			rr(t_stack_node **a, t_stack_node **b);
 
-// comandos_swap.c
-void			swap(t_stack_node **pilha);
+// commands_swap.c
+void			swap(t_stack_node **stack);
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
 void			ss(t_stack_node **a, t_stack_node **b);

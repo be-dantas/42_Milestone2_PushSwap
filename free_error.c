@@ -29,13 +29,13 @@ void	free_split(char **argv_split)
 
 void	free_all(char **argv_split, t_stack_node *a)
 {
-	t_stack_node	*tmp;
+	t_stack_node	*temp;
 
 	while (a)
 	{
-		tmp = a->next;
+		temp = a->next;
 		free(a);
-		a = tmp;
+		a = temp;
 	}
 	free_split(argv_split);
 	ft_putstr_fd("Error\n", 2);
@@ -44,13 +44,13 @@ void	free_all(char **argv_split, t_stack_node *a)
 
 void	free_stack(t_stack_node *a)
 {
-	t_stack_node	*tmp;
+	t_stack_node	*temp;
 
 	while (a)
 	{
-		tmp = a->next;
+		temp = a->next;
 		free(a);
-		a = tmp;
+		a = temp;
 	}
 }
 

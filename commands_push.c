@@ -12,16 +12,16 @@
 
 #include "push_swap.h"
 
-void	push(t_stack_node **dest, t_stack_node **pilha)
+void	push(t_stack_node **dest, t_stack_node **stack)
 {
 	t_stack_node	*item;
 
-	if (*pilha == NULL)
+	if (*stack == NULL)
 		return ;
-	item = *pilha;
-	*pilha = (*pilha)->next;
-	if (*pilha)
-		(*pilha)->prev = NULL;
+	item = *stack;
+	*stack = (*stack)->next;
+	if (*stack)
+		(*stack)->prev = NULL;
 	if (*dest == NULL)
 	{
 		*dest = item;

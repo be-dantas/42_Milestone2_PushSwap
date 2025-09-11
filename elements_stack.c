@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack_node	*criar_elemento_pilha(int argv_atoi)
+t_stack_node	*create_element_stack(int argv_atoi)
 {
 	t_stack_node	*item;
 
@@ -25,33 +25,33 @@ t_stack_node	*criar_elemento_pilha(int argv_atoi)
 	return (item);
 }
 
-t_stack_node	*ultimo_elemento(t_stack_node *a)
+t_stack_node	*last_element(t_stack_node *stack)
 {
-	while (a->next != NULL)
-		a = a->next;
-	return (a);
+	while (stack->next != NULL)
+		stack = stack->next;
+	return (stack);
 }
 
-int	tamanho_pilha(t_stack_node *pilha)
+int	stack_size(t_stack_node *stack)
 {
 	int	i;
 
 	i = 1;
-	while (pilha->next != NULL)
+	while (stack->next != NULL)
 	{
 		i++;
-		pilha = pilha->next;
+		stack = stack->next;
 	}
 	return (i);
 }
 
-void	adicionar_int_pilha(t_stack_node *a, int argv_atoi)
+void	add_int_stack(t_stack_node *a, int argv_atoi)
 {
 	t_stack_node	*item;
-	t_stack_node	*item_anterior;
+	t_stack_node	*item_previous;
 
-	item = criar_elemento_pilha(argv_atoi);
-	item_anterior = ultimo_elemento(a);
-	item_anterior->next = item;
-	item->prev = item_anterior;
+	item = create_element_stack(argv_atoi);
+	item_previous = last_element(a);
+	item_previous->next = item;
+	item->prev = item_previous;
 }

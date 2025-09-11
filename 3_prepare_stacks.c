@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_ajeitar_pilhas.c                                 :+:      :+:    :+:   */
+/*   3_prepare_stacks.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:32 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/11 16:21:29 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/11 17:08:11 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pilha_até_3(t_stack_node **a)
+void	stack_up_3(t_stack_node **a)
 {
-	if (tamanho_pilha(*a) == 1)
+	if (stack_size(*a) == 1)
 		return ;
-	else if (tamanho_pilha(*a) == 2)
+	else if (stack_size(*a) == 2)
 	{
 		if ((*a)->index > (*a)->next->index)
 			sa(a);
 	}
-	else if (tamanho_pilha(*a) == 3)
+	else if (stack_size(*a) == 3)
 	{
 		if ((*a)->index > (*a)->next->index)
 			sa(a);
@@ -35,26 +35,26 @@ void	pilha_até_3(t_stack_node **a)
 	}
 }
 
-void	pilha_b(t_stack_node **a, t_stack_node **b)
+void	stack_b(t_stack_node **a, t_stack_node **b)
 {
-	int	len_orinal;
-	int	meio_pilha;
+	int	len_original;
+	int	middle_pilha;
 
-	len_orinal = tamanho_pilha(*a);
-	meio_pilha = (len_orinal / 2) - 1;
-	if (len_orinal <= 3)
+	len_original = stack_size(*a);
+	middle_pilha = (len_original / 2) - 1;
+	if (len_original <= 3)
 	{
-		pilha_até_3(a);
+		stack_up_3(a);
 		return ;
 	}
-	while (tamanho_pilha(*a) > 3)
+	while (stack_size(*a) > 3)
 	{
-		if ((*a)->index > len_orinal - 4)
+		if ((*a)->index > len_original - 4)
 			ra(a);
 		else
 		{
 			pb(b, a);
-			if ((*b)->index > meio_pilha)
+			if ((*b)->index > middle_pilha)
 				rb(b);
 		}
 	}

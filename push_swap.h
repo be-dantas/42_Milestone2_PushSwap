@@ -16,6 +16,7 @@
 # include <limits.h> // valot int MAX int MIN
 # include "./LIBFT/libft.h"
 #include <stdio.h>
+
 // Guarda valores e informações úteis para manipulação da pilha.
 typedef struct s_stack_node
 {
@@ -26,6 +27,7 @@ typedef struct s_stack_node
 }				t_stack_node;
 
 // 1_criar_pilha.c
+void			index_elemento(t_stack_node **a);
 int				int_repetidos(t_stack_node *a, int argv_atoi);
 t_stack_node	*criar_pilha_a(t_stack_node *a, int argc, char **argv);
 
@@ -35,12 +37,17 @@ char			*fazer_join(char **argv, char *argv_ok);
 char			*argv_maior_2(char **argv);
 char			**tratar_input(int argc, char **argv);
 
-// 3_elementos_pilha.c
+// 3_ajeitar_pilhas.c
+void			pilha_até_3(t_stack_node **a);
+void			pilha_b(t_stack_node **a, t_stack_node **b);
+
+// elementos_pilha.c
 t_stack_node	*criar_elemento_pilha(int argv_atoi);
 t_stack_node	*ultimo_elemento(t_stack_node *a);
+int				tamanho_pilha(t_stack_node *pilha);
 void			adicionar_int_pilha(t_stack_node *a, int argv_atoi);
 
-// 4_free_error.c
+// free_error.c
 void			free_split(char **argv_split);
 void			free_all(char **argv_split, t_stack_node *a);
 void			free_stack(t_stack_node *a);
@@ -68,8 +75,5 @@ void			swap(t_stack_node **pilha);
 void			sa(t_stack_node **a);
 void			sb(t_stack_node **b);
 void			ss(t_stack_node **a, t_stack_node **b);
-
-// 5_stack_index.c
-void	index_elemento(t_stack_node **a);
 
 #endif

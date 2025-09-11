@@ -25,13 +25,22 @@ int	main(int argc, char **argv)
 	{
 		a = criar_pilha_a(a, argc, argv);
 
-		index_elemento(&a);
+		pilha_b(&a, &b);
 
+		printf("Lista A:\n");
 		t_stack_node *head = a;
 		while (head != NULL)
 		{
-			printf ("Value: %d  Index: %d\n", head->value, head->index);
+			printf ("%d\n", head->index);
 			head = head->next;
+		}
+
+		printf("Lista B:\n");
+		t_stack_node *head_1 = b;
+		while (head_1 != NULL)
+		{
+			printf ("%d\n", head_1->index);
+			head_1 = head_1->next;
 		}
 
 	}
@@ -51,6 +60,19 @@ int	main(int argc, char **argv)
 // 	printf ("%d\n", head->value);
 // 	head = head->next;
 // }
+
+
+
+// ---- index lista A
+// index_elemento(&a);
+
+// t_stack_node *head = a;
+// while (head != NULL)
+// {
+// 	printf ("Value: %d  Index: %d\n", head->value, head->index);
+// 	head = head->next;
+// }
+
 
 
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   criando_pilha_a.c                                  :+:      :+:    :+:   */
+/*   3_elementos_pilha.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/04 18:24:40 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/08 17:57:55 by bedantas         ###   ########.fr       */
+/*   Created: 2025/09/11 12:36:07 by bedantas          #+#    #+#             */
+/*   Updated: 2025/09/11 12:36:07 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,19 @@ t_stack_node	*ultimo_elemento(t_stack_node *a)
 	while (a->next != NULL)
 		a = a->next;
 	return (a);
+}
+
+int	tamanho_pilha(t_stack_node *pilha)
+{
+	int	i;
+
+	i = 1;
+	while (pilha->next != NULL)
+	{
+		i++;
+		pilha = pilha->next;
+	}
+	return (i);
 }
 
 void	adicionar_int_pilha(t_stack_node *a, int argv_atoi)

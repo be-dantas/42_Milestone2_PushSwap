@@ -1,16 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   preparar_input.c                                   :+:      :+:    :+:   */
+/*   1_criar_pilha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/03 13:16:59 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/08 17:48:34 by bedantas         ###   ########.fr       */
+/*   Created: 2025/09/11 12:35:50 by bedantas          #+#    #+#             */
+/*   Updated: 2025/09/11 12:35:50 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	index_elemento(t_stack_node **a)
+{
+	int				i;
+	t_stack_node	*temp_pilha;
+	t_stack_node	*percorrer;
+	t_stack_node	*inicial_temp;
+
+	i = 0;
+	temp_pilha = *a;
+	percorrer = *a;
+	inicial_temp = temp_pilha;
+	while (temp_pilha != NULL)
+	{
+		while (percorrer != NULL)
+		{
+			if (temp_pilha->value > percorrer->value)
+				i++;
+			percorrer = percorrer->next;
+		}
+		temp_pilha->index = i;
+		i = 0;
+		temp_pilha = temp_pilha->next;
+		percorrer = *a;
+	}
+	*a = inicial_temp;
+}
 
 int	int_repetidos(t_stack_node *a, int argv_atoi)
 {
@@ -49,6 +76,7 @@ t_stack_node	*criar_pilha_a(t_stack_node *a, int argc, char **argv)
 			free_all(argv_split, a);
 		i++;
 	}
+	index_elemento(&a);
 	free_split(argv_split);
 	return (a);
 }

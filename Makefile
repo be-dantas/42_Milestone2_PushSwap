@@ -19,13 +19,13 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS =	push_swap.c				\
 		1_criar_pilha.c			\
 		2_preparar_input.c		\
-		3_elementos_pilha.c		\
-		4_free_error.c			\
+		3_ajeitar_pilhas.c		\
+		elementos_pilha.c		\
+		free_error.c			\
 		comandos_push.c			\
 		comandos_rotate_baixo.c	\
 		comandos_rotate_cima.c	\
-		comandos_swap.c			\
-		5_stack_index.c
+		comandos_swap.c
 
 OBJS = $(SRCS:.c=.o)
 

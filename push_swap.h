@@ -31,21 +31,26 @@ void			index_element(t_stack_node **a);
 int				int_repeated(t_stack_node *a, int argv_atoi);
 t_stack_node	*create_stack_a(t_stack_node *a, int argc, char **argv);
 
-// 2_prepare_input.c
+// 1_prepare_input.c
 int				valid_input(char *argv_ok);
 char			*make_join(char **argv, char *argv_ok);
 char			*argv_up_2(char **argv);
 char			**treat_input(int argc, char **argv);
 
-// 3_prepare_stacks.c
-void			stack_up_3(t_stack_node **a);
+// 2_prepare_stack_a.c
+void			stack_up_3(t_stack_node **a, t_stack_node **b, int n_containers, int n_value);
+void			stack_3(t_stack_node **a);
+
+// 2_prepare_stack_b.c
+int				containers(t_stack_node *a);
+int				value(t_stack_node *a, int n_containers);
 void			stack_b(t_stack_node **a, t_stack_node **b);
 
-// 4_passar_stack_a.c
-int				achar_maior_pos(t_stack_node *b);
+// 3_push_stack_a.c
+int				find_high_pos(t_stack_node *b);
 void			rotate_upb_pusha(t_stack_node **a, t_stack_node **b, int i);
 void			rotate_downb_pusha(t_stack_node **a, t_stack_node **b, int pos_maior);
-void			passar_b_para_a(t_stack_node **a, t_stack_node **b);
+void			b_for_a(t_stack_node **a, t_stack_node **b);
 
 // elements_stack.c
 t_stack_node	*create_element_stack(int argv_atoi);

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4_passar_stack_a.c                                 :+:      :+:    :+:   */
+/*   3_push_stack_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 12:29:24 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/16 11:49:12 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/16 19:05:48 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	achar_maior_pos(t_stack_node *b)
+int	find_high_pos(t_stack_node *b)
 {
-	int	pos_maior;
+	int	pos_high;
 
 	if (!b)
 		return (-1);
-	pos_maior = b->index;
+	pos_high = b->index;
 	while (b)
 	{
-		if (b->index > pos_maior)
-			pos_maior = b->index;
+		if (b->index > pos_high)
+			pos_high = b->index;
 		b = b->next;
 	}
-	return (pos_maior);
+	return (pos_high);
 }
 
 void	rotate_upb_pusha(t_stack_node **a, t_stack_node **b, int i)
@@ -49,26 +49,26 @@ void	rotate_downb_pusha(t_stack_node **a, t_stack_node **b, int i)
 }
 
 
-void	passar_b_para_a(t_stack_node **a, t_stack_node **b)
+void	b_for_a(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node	*andar_b;
+	t_stack_node	*temp_b;
 	int 			i;
 	int				len_b;
 	int				middle_stack;
-	int 			pos_maior;
+	int 			pos_high;
 
 	if (!a || !b || !*b)
 		return ;
 	while (*b)
 	{
-		andar_b = *b;
+		temp_b = *b;
 		i = 0;
 		len_b = stack_size(*b);
-		middle_stack = (len_b / 2); // -1
-		pos_maior = achar_maior_pos(*b);
-		while (andar_b->index != pos_maior)
+		middle_stack = (len_b / 2);
+		pos_high = find_high_pos(*b);
+		while (temp_b->index != pos_high)
 		{
-			andar_b = andar_b->next;
+			temp_b = temp_b->next;
 			i++;
 		}
 		if (i <= middle_stack)

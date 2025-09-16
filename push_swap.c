@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 			free_stack(a);
 			return (0);
 		}
-		passar_b_para_a(&a,&b);
+		b_for_a(&a,&b);
 		if (!a && b != NULL)
 		{
 			free_stack(a);

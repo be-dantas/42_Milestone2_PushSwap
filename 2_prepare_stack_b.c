@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:32 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/16 19:06:08 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/16 19:09:34 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	stack_b(t_stack_node **a, t_stack_node **b)
 	int	n_containers;
 	int	n_value;
 
-	n_containers = containers(a);
-	n_value = value(a, n_containers);
+	n_containers = containers(*a);
+	n_value = value(*a, n_containers);
 	if (stack_size(*a) > 3)
 		stack_up_3(a, b, n_containers, n_value);
 	if (stack_size(*a) == 3)

@@ -40,6 +40,7 @@ char			**treat_input(int argc, char **argv);
 // 2_prepare_stack_a.c
 void			stack_up_3(t_stack_node **a, t_stack_node **b, int n_containers, int n_value);
 void			stack_3(t_stack_node **a);
+void			stack_2_1(t_stack_node **a);
 
 // 2_prepare_stack_b.c
 int				containers(t_stack_node *a);

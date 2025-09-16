@@ -32,14 +32,13 @@ int	main(int argc, char **argv)
 			free_stack(a);
 			return (0);
 		}
-		passar_b_para_a(&a,&b);
-		if (!a && b != NULL)
-		{
-			free_stack(a);
-			free_stack(b);
-			return (0);
-		}
-		
+		// passar_b_para_a(&a,&b);
+		// if (!a && b != NULL)
+		// {
+		// 	free_stack(a);
+		// 	free_stack(b);
+		// 	return (0);
+		// }
 		
 		printf("Lista A:\n");
 		t_stack_node *head = a;
@@ -49,6 +48,13 @@ int	main(int argc, char **argv)
 			head = head->next;
 		}
 
+		printf("Lista B:\n");
+		head = b;
+		while (head != NULL)
+		{
+			printf ("%d\n", head->index);
+			head = head->next;
+		}
 
 	}
 	free_stack(a);

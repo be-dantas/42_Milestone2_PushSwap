@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   3_prepare_stacks.c                                 :+:      :+:    :+:   */
+/*   3_prepare_stacks copy.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:32 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/16 14:48:14 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/16 14:35:08 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,58 +37,23 @@ void	stack_up_3(t_stack_node **a)
 		sa(a);
 }
 
-// void	stack_b(t_stack_node **a, t_stack_node **b)
-// {
-// 	int	len_original;
-// 	int	middle_stack;
-
-// 	len_original = stack_size(*a);
-// 	middle_stack = (len_original / 2);
-// 	while (stack_size(*a) > 3)
-// 	{
-// 		if ((*a)->index >= len_original - 3)
-// 			ra(a);
-// 		else
-// 		{
-// 			pb(b, a);
-// 			if ((*b)->index < middle_stack)
-// 				rb(b);
-// 		}
-// 	}
-// 	stack_up_3(a);
-// }
-
 void	stack_b(t_stack_node **a, t_stack_node **b)
 {
-	int	len_a;
-	int	n_containers;
-	int	n_value;
-	int	len_b;
+	int	len_original;
+	int	middle_stack;
 
-	len_a = stack_size(*a);
-	n_containers = 0;
-	len_b = 0;
-	while (len_a > 0)
+	len_original = stack_size(*a);
+	middle_stack = (len_original / 2);
+	while (stack_size(*a) > 3)
 	{
-		len_a = len_a / 2;
-		n_containers++;
-	}
-	n_value = stack_size(*a) / n_containers;
-	if (stack_size(*a) % n_containers != 0)
-		n_value = n_value + 1;
-	while (len_a > 3)
-	{
-		while (n_containers > 0)
+		if ((*a)->index >= len_original - 3)
+			ra(a);
+		else
 		{
-			while ((*a)->index >= len_b && (*a)->index <= n_value)
-			{
-				/* code */
-			}
-			n_containers--;
-			n_value = len_b + n_value;
+			pb(b, a);
+			if ((*b)->index < middle_stack)
+				rb(b);
 		}
-		
 	}
 	stack_up_3(a);
-
 }

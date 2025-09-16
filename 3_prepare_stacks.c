@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:32 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/11 17:08:11 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/15 17:50:46 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,10 @@ void	stack_up_3(t_stack_node **a)
 void	stack_b(t_stack_node **a, t_stack_node **b)
 {
 	int	len_original;
-	int	middle_pilha;
+	int	middle_stack;
 
 	len_original = stack_size(*a);
-	middle_pilha = (len_original / 2) - 1;
-	if (len_original <= 3)
-	{
-		stack_up_3(a);
-		return ;
-	}
+	middle_stack = (len_original / 2) - 1;
 	while (stack_size(*a) > 3)
 	{
 		if ((*a)->index > len_original - 4)
@@ -54,8 +49,35 @@ void	stack_b(t_stack_node **a, t_stack_node **b)
 		else
 		{
 			pb(b, a);
-			if ((*b)->index > middle_pilha)
+			if ((*b)->index < middle_stack)
 				rb(b);
 		}
 	}
+	if (len_original <= 3)
+		stack_up_3(a);
 }
+
+// void	stack_b(t_stack_node **a, t_stack_node **b)
+// {
+// 	int	len_original;
+// 	int	middle_stack;
+
+// 	len_original = stack_size(*a);
+// 	middle_stack = (len_original / 2) - 1;
+// 	if (len_original <= 3)
+// 	{
+// 		stack_up_3(a);
+// 		return ;
+// 	}
+// 	while (stack_size(*a) > 3)
+// 	{
+// 		if ((*a)->index > len_original - 4)
+// 			ra(a);
+// 		else
+// 		{
+// 			pb(b, a);
+// 			if ((*b)->index > middle_stack)
+// 				rb(b);
+// 		}
+// 	}
+// }

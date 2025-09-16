@@ -41,6 +41,12 @@ char			**treat_input(int argc, char **argv);
 void			stack_up_3(t_stack_node **a);
 void			stack_b(t_stack_node **a, t_stack_node **b);
 
+// 4_passar_stack_a.c
+int				achar_maior_pos(t_stack_node *b);
+void			rotate_upb_pusha(t_stack_node **a, t_stack_node **b, int i);
+void			rotate_downb_pusha(t_stack_node **a, t_stack_node **b, int pos_maior);
+void			passar_b_para_a(t_stack_node **a, t_stack_node **b);
+
 // elements_stack.c
 t_stack_node	*create_element_stack(int argv_atoi);
 t_stack_node	*last_element(t_stack_node *stack);

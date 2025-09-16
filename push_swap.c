@@ -24,9 +24,23 @@ int	main(int argc, char **argv)
 	if (argc >= 2)
 	{
 		a = create_stack_a(a, argc, argv);
-
+		if (!a)
+			return (0);
 		stack_b(&a, &b);
-
+		if (!b)
+		{
+			free_stack(a);
+			return (0);
+		}
+		passar_b_para_a(&a,&b);
+		if (!a && b != NULL)
+		{
+			free_stack(a);
+			free_stack(b);
+			return (0);
+		}
+		
+		
 		printf("Lista A:\n");
 		t_stack_node *head = a;
 		while (head != NULL)
@@ -35,17 +49,9 @@ int	main(int argc, char **argv)
 			head = head->next;
 		}
 
-		printf("Lista B:\n");
-		t_stack_node *head_1 = b;
-		while (head_1 != NULL)
-		{
-			printf ("%d\n", head_1->index);
-			head_1 = head_1->next;
-		}
 
 	}
 	free_stack(a);
-	free_stack(b);
 	return (0);
 }
 

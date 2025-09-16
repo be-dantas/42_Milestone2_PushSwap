@@ -20,6 +20,7 @@ SRCS =	push_swap.c				\
 		1_create_stack_a.c		\
 		2_prepare_input.c		\
 		3_prepare_stacks.c		\
+		4_passar_stack_a.c		\
 		elements_stack.c		\
 		free_error.c			\
 		commands_push.c			\

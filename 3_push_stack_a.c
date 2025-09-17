@@ -6,7 +6,7 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 12:29:24 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/16 19:05:48 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/17 14:35:18 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,13 @@ void	rotate_downb_pusha(t_stack_node **a, t_stack_node **b, int i)
 	pa(a, b);
 }
 
-
 void	b_for_a(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*temp_b;
-	int 			i;
+	int				i;
 	int				len_b;
 	int				middle_stack;
-	int 			pos_high;
+	int				pos_high;
 
 	if (!a || !b || !*b)
 		return ;

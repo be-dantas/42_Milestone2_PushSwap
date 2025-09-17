@@ -80,3 +80,15 @@ t_stack_node	*create_stack_a(t_stack_node *a, int argc, char **argv)
 	free_split(argv_split);
 	return (a);
 }
+
+int	stack_order_ok(t_stack_node *a)
+{
+	while (a && a->next)
+	{
+		if (a->value < a->next->value)
+			a = a->next;
+		else
+			return (0);
+	}
+	return (1);
+}

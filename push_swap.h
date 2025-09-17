@@ -15,7 +15,6 @@
 
 # include <limits.h> // valot int MAX int MIN
 # include "./LIBFT/libft.h"
-#include <stdio.h>
 
 // Guarda valores e informações úteis para manipulação da pilha.
 typedef struct s_stack_node
@@ -30,6 +29,7 @@ typedef struct s_stack_node
 void			index_element(t_stack_node **a);
 int				int_repeated(t_stack_node *a, int argv_atoi);
 t_stack_node	*create_stack_a(t_stack_node *a, int argc, char **argv);
+int				stack_order_ok(t_stack_node *a);
 
 // 1_prepare_input.c
 int				valid_input(char *argv_ok);
@@ -38,7 +38,11 @@ char			*argv_up_2(char **argv);
 char			**treat_input(int argc, char **argv);
 
 // 2_prepare_stack_a.c
-void			stack_up_3(t_stack_node **a, t_stack_node **b, int n_containers, int n_value);
+void			push_container_to_b(t_stack_node **a,
+					t_stack_node **b, int start, int end);
+void			push_last_to_b(t_stack_node **a, t_stack_node **b, int len_a);
+void			stack_up_3(t_stack_node **a, t_stack_node **b,
+					int n_containers, int n_value);
 void			stack_3(t_stack_node **a);
 void			stack_2_1(t_stack_node **a);
 
@@ -50,7 +54,8 @@ void			stack_b(t_stack_node **a, t_stack_node **b);
 // 3_push_stack_a.c
 int				find_high_pos(t_stack_node *b);
 void			rotate_upb_pusha(t_stack_node **a, t_stack_node **b, int i);
-void			rotate_downb_pusha(t_stack_node **a, t_stack_node **b, int pos_maior);
+void			rotate_downb_pusha(t_stack_node **a,
+					t_stack_node **b, int pos_maior);
 void			b_for_a(t_stack_node **a, t_stack_node **b);
 
 // elements_stack.c

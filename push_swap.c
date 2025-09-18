@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 		free_stack(a);
 		return (0);
 	}
-	stack_b(&a, &b);
+	stack_a_b(&a, &b);
 	b_for_a(&a, &b);
 	free_stack(a);
 	free_stack(b);

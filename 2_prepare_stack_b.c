@@ -6,50 +6,69 @@
 /*   By: bedantas <bedantas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 12:35:32 by bedantas          #+#    #+#             */
-/*   Updated: 2025/09/17 16:41:37 by bedantas         ###   ########.fr       */
+/*   Updated: 2025/09/18 19:07:48 by bedantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	containers(t_stack_node *a)
+int	container(t_stack_node *a)
 {
-	int	len_a;
-	int	n_containers;
+	int	container;
 
-	len_a = stack_size(a) - 3;
-	n_containers = 0;
-	while (len_a > 0)
+	container = 0;
+	if (stack_size(a) >= 500)
+		container = 100;
+	else if (stack_size(a) >= 200)
+		container = 60;
+	else if (stack_size(a) >= 100)
+		container = 30;
+	else if (stack_size(a) < 100)
+		container = stack_size(a) / 2;
+	return (container);
+}
+
+void	push_a_for_b(t_stack_node **a, t_stack_node **b,
+			int start, int len_a_original)
+{
+	int	i;
+	int	container_size;
+	int	middle;
+	int	end;
+
+	i = 0;
+	container_size = container(*a);
+	end = start + container_size;
+	if (end > len_a_original - 3)
+		end = len_a_original - 3;
+	middle = start + (end - start) / 2;
+	while (i < container_size && stack_size(*a) > 3)
 	{
-		len_a = len_a / 2;
-		n_containers++;
+		if ((*a)->index >= len_a_original - 3)
+			ra(a);
+		else if ((*a)->index >= start && (*a)->index < end)
+		{
+			pb(b, a);
+			if ((*b)->index < middle)
+				rb(b);
+			i++;
+		}
+		else
+			ra(a);
 	}
-	return (n_containers);
 }
 
-int	value(t_stack_node *a, int n_containers)
+void	stack_up_3(t_stack_node **a, t_stack_node **b)
 {
-	int	len_a;
-	int	n_value;
+	int	len_a_original;
+	int	start;
 
-	len_a = stack_size(a) - 3;
-	n_value = len_a / n_containers;
-	if (len_a % n_containers != 0)
-		n_value++;
-	return (n_value);
-}
-
-void	stack_b(t_stack_node **a, t_stack_node **b)
-{
-	int	n_containers;
-	int	n_value;
-
-	n_containers = containers(*a);
-	n_value = value(*a, n_containers);
-	if (stack_size(*a) < 3)
-		stack_2_1(a);
-	else if (stack_size(*a) == 3)
-		stack_3(a);
-	else
-		stack_up_3(a, b, n_containers, n_value);
+	start = 0;
+	len_a_original = stack_size(*a);
+	while (stack_size(*a) > 3)
+	{
+		push_a_for_b(a, b, start, len_a_original);
+		start = stack_size(*b);
+	}
+	stack_3(a);
 }

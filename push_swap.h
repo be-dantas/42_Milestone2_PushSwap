@@ -37,19 +37,16 @@ char			*make_join(char **argv, char *argv_ok);
 char			*argv_up_2(char **argv);
 char			**treat_input(int argc, char **argv);
 
-// 2_prepare_stack_a.c
-void			push_container_to_b(t_stack_node **a,
-					t_stack_node **b, int start, int end);
-void			push_last_to_b(t_stack_node **a, t_stack_node **b, int len_a);
-void			stack_up_3(t_stack_node **a, t_stack_node **b,
-					int n_containers, int n_value);
+// // 2_prepare_stack_a.c
 void			stack_3(t_stack_node **a);
 void			stack_2_1(t_stack_node **a);
+void			stack_a_b(t_stack_node **a, t_stack_node **b);
 
-// 2_prepare_stack_b.c
-int				containers(t_stack_node *a);
-int				value(t_stack_node *a, int n_containers);
-void			stack_b(t_stack_node **a, t_stack_node **b);
+// // 2_prepare_stack_b.c
+int				container(t_stack_node *a);
+void			push_a_for_b(t_stack_node **a, t_stack_node **b,
+					int start, int len_a_original);
+void			stack_up_3(t_stack_node **a, t_stack_node **b);
 
 // 3_push_stack_a.c
 int				find_high_pos(t_stack_node *b);

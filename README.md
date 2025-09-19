@@ -63,6 +63,7 @@ Essa abordagem aproveita o conceito de **chunk sorting**, mas com uma adaptaçã
 ```bash
 make
 ./push_swap 2 1 3 6 5 8
+```
 Saída esperada (sequência de operações):
 pb
 pb

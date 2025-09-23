@@ -17,11 +17,11 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	push_swap.c				\
-		1_create_stack_a.c		\
-		1_prepare_input.c		\
-		2_prepare_stack_a.c		\
-		2_prepare_stack_b.c		\
-		3_push_stack_a.c		\
+		create_stack_a.c		\
+		prepare_input.c			\
+		prepare_stack_a.c		\
+		prepare_stack_b.c		\
+		push_stack_a.c			\
 		elements_stack.c		\
 		free_error.c			\
 		commands_push.c			\
@@ -36,8 +36,8 @@ RMAKE = make re
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	cd ./LIBFT && $(RMAKE)
-	cp ./LIBFT/libft.a $(NAME)
+	cd ./libft && $(RMAKE)
+	cp ./libft/libft.a $(NAME)
 	ar -rcs $(NAME) $(OBJS)
 
 %.o: %.c
@@ -45,11 +45,11 @@ $(NAME): $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-	cd ./LIBFT && make clean
+	cd ./libft && make clean
 
 fclean: clean
 	rm -f $(NAME)
-	cd ./LIBFT && make fclean
+	cd ./libft && make fclean
 
 re: fclean all
 

@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <limits.h> // valot int MAX int MIN
-# include "./LIBFT/libft.h"
+# include "./libft/libft.h"
 
 // Guarda valores e informações úteis para manipulação da pilha.
 typedef struct s_stack_node
@@ -37,12 +37,12 @@ char			*make_join(char **argv, char *argv_ok);
 char			*argv_up_2(char **argv);
 char			**treat_input(int argc, char **argv);
 
-// // 2_prepare_stack_a.c
+// 2_prepare_stack_a.c
 void			stack_3(t_stack_node **a);
 void			stack_2_1(t_stack_node **a);
 void			stack_a_b(t_stack_node **a, t_stack_node **b);
 
-// // 2_prepare_stack_b.c
+// 2_prepare_stack_b.c
 int				container(t_stack_node *a);
 void			push_a_for_b(t_stack_node **a, t_stack_node **b,
 					int start, int len_a_original);

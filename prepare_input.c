@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// checa cada string do array para ver 'e numero ou se tem ++ -- seguidos
 int	valid_input(char *argv_ok)
 {
 	int	i;

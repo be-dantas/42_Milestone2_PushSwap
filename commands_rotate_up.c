@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// o começo vira o final, e o comeco vira o segundo
 void	rotate_up(t_stack_node **stack)
 {
 	t_stack_node	*top;

@@ -12,7 +12,6 @@
 
 #include "push_swap.h"
 
-// o final vira o comeco, e o final vira o penultimo
 void	rotate_down(t_stack_node **stack)
 {
 	t_stack_node	*end;

@@ -33,6 +33,7 @@ int				stack_order_ok(t_stack_node *a);
 // 1_prepare_input.c
 int				valid_input(char *argv_ok);
 char			*make_join(char **argv, char *argv_ok);
+int				string_space(char *argv);
 char			*argv_up_2(char **argv);
 char			**treat_input(int argc, char **argv);
 

@@ -66,6 +66,24 @@ char	*make_join(char **argv, char *argv_join)
 	return (argv_join);
 }
 
+int	string_space(char *argv)
+{
+	int	flag;
+	int	i;
+
+	flag = 0;
+	i = 0;
+	while (argv[i])
+	{
+		if (ft_isdigit(argv[i]))
+			flag = 1;
+		if (argv[i + 1] == '\0' && flag == 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 char	*argv_up_2(char **argv)
 {
 	int		i;
@@ -78,7 +96,7 @@ char	*argv_up_2(char **argv)
 		return (NULL);
 	while (argv[i])
 	{
-		if (argv[i][0] == '\0')
+		if (argv[i][0] == '\0' || string_space(argv[i]))
 		{
 			free (argv_ok);
 			check_error();
@@ -98,7 +116,7 @@ char	**treat_input(int argc, char **argv)
 	argv_split = NULL;
 	if (argc > 2)
 		argv_ok = argv_up_2(argv);
-	else if (argc == 2)
+	else if (argc == 2 && argv[1][0] && !string_space(argv[1]))
 		argv_ok = ft_strdup(argv[1]);
 	if (!argv_ok)
 		return (NULL);

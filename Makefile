@@ -40,7 +40,6 @@ $(NAME): $(OBJS)
 	cp ./libft/libft.a $(NAME)
 	ar -rcs $(NAME) $(OBJS)
 	cc push_swap.c $(NAME) -o push_swap
-	rm -f push_swap.a
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
